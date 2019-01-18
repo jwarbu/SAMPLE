@@ -1,13 +1,13 @@
 var search_terms = []
 $( document ).ready(function() {
 
-	// Search-Terms
+// User-specified Search-Terms
     $( "#search-terms-btn" ).click((e) => {
         var value = $( "#search-terms-in" ).val();
         search_terms.push('"'+value+'"');
-		var close_id = "term-" + value;
+	var close_id = "term-" + value;
         if (value != "") {
-        	// create search term button and display above search bar along with previous terms
+        // create search term button and display above search bar along with previous terms
             $( "#search-terms-div" ).append(
                 '<div class="m-1 d-inline-block alert alert-secondary alert-dismissible fade show" role="alert">' +
                     '<strong>' + value + '</strong>' +
@@ -19,7 +19,7 @@ $( document ).ready(function() {
             $( "#search-terms-in" ).val("");
         }
         $( "#search-terms-in" ).focus();
-        //
+        // load grid of project cards
         findProjects();
     });
 
